@@ -32,7 +32,7 @@
   max-width: none;
   min-height: 680px;
   padding: 120px 0 65px;
-  background: url('../assets/images/background-home-desktop.webp') center center / cover no-repeat;
+  background: url('../assets/images/background-home-desktop.webp') center top / cover no-repeat;
   text-align: left;
 }
 .consolidada .hero-classic .hero-content { max-width: 570px; width: 49%; }
