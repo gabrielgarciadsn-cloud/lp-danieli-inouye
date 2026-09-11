@@ -1,0 +1,277 @@
+/* Classic opening: copy on the left, Danieli as the full-width background. */
+.consolidada .site-header {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  width: min(1120px, 92%);
+  max-width: 1120px;
+  margin: 0;
+  padding: 12px 23px;
+  gap: 28px;
+  transform: translate(-50%, -125%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 60;
+  transition: opacity .4s, transform .4s, visibility .4s;
+}
+.consolidada .site-header.nav-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.consolidada .site-header nav { gap: 20px; font-size: 13px; }
+.consolidada .site-header .brand { font-size: 21px; }
+.consolidada .site-header .header-cta { padding: 9px 15px; }
+.consolidada .hero-classic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  min-height: 680px;
+  padding: 120px 0 65px;
+  background: url('../assets/images/background-home.webp') center center / cover no-repeat;
+  text-align: left;
+}
+.consolidada .hero-classic .hero-content { max-width: 570px; width: 49%; }
+.consolidada .hero-classic h1 {
+  font-size: clamp(54px, 6vw, 86px);
+  line-height: .98;
+  margin: 26px 0 28px;
+  text-wrap: balance;
+}
+.consolidada .hero-classic .hero-top,
+.consolidada .hero-classic .hero-detail { justify-content: flex-start; }
+.consolidada .hero-classic .eyebrow,
+.consolidada .hero-classic .hero-description > p { margin-left: 0; margin-right: 0; }
+.consolidada .hero-classic .eyebrow {
+  background: rgba(250, 246, 253, .74);
+  backdrop-filter: blur(10px);
+}
+.consolidada .hero-classic .hero-description > p { max-width: 470px; }
+.consolidada .hero-classic .hero-detail { max-width: 420px; border-color: #77508d40; }
+.consolidada .hero-action { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.consolidada .hero-classic .hero-plan { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink); }
+.consolidada .hero-plan strong { color: var(--accent); font-weight: 700; }
+@media (max-width: 950px) and (min-width: 651px) {
+  .consolidada .site-header nav > a:not(.header-cta) { display: none; }
+  .consolidada .hero-classic { min-height: 720px; background-position: 58% center; }
+  .consolidada .hero-classic .hero-content { width: 52%; }
+  .consolidada .hero-classic .hero-description > p { font-size: 16px; }
+}
+@media (max-width: 650px) {
+  .consolidada .site-header {
+    top: 10px;
+    left: 50%;
+    width: 94%;
+    max-width: none;
+    padding: 11px 17px;
+    flex-direction: row;
+    gap: 18px;
+    border-radius: 50px;
+  }
+  .consolidada .site-header .brand { font-size: 18px; }
+  .consolidada .site-header .header-cta {
+    max-width: 108px;
+    padding: 8px 14px;
+    font-size: 11px;
+    line-height: 1.05;
+    text-align: center;
+    white-space: normal;
+  }
+  .consolidada .hero-classic {
+    min-height: 0;
+    padding: 350px 0 55px;
+    background-color: #f4eef9;
+    background-image: linear-gradient(to bottom, transparent 260px, #f4eef9 410px), url('../assets/images/background-home.webp');
+    background-position: center top, 88% top;
+    background-size: 100% 420px, auto 420px;
+    background-repeat: no-repeat;
+    text-align: center;
+  }
+  .consolidada .hero-classic .hero-content { width: 100%; max-width: none; }
+  .consolidada .hero-classic .hero-top,
+  .consolidada .hero-action {
+    align-items: center;
+    justify-content: center;
+  }
+  .consolidada .hero-classic .eyebrow,
+  .consolidada .hero-classic .hero-description > p { margin-left: auto; margin-right: auto; }
+  .consolidada .hero-classic h1 { font-size: clamp(46px, 12.5vw, 70px); margin: 22px 0 24px; }
+  .consolidada .hero-classic .hero-description > p { font-size: 16px; }
+  .consolidada .hero-classic .hero-plan { font-size: 14px; line-height: 1.5; }
+}
+
+.consolidada .testimonial-marquee {
+  position: relative;
+  width: 100%;
+  margin-top: 48px;
+  overflow: hidden;
+}
+.consolidada .testimonial-marquee::before,
+.consolidada .testimonial-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: min(11vw, 150px);
+  z-index: 2;
+  pointer-events: none;
+}
+.consolidada .testimonial-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg), transparent);
+}
+.consolidada .testimonial-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg), transparent);
+}
+.consolidada .testimonial-track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  padding: 8px 24px;
+  animation: testimonial-scroll 42s linear infinite;
+}
+.consolidada .testimonial-marquee:hover .testimonial-track {
+  animation-play-state: paused;
+}
+.consolidada .testimonial-slot {
+  flex: 0 0 clamp(250px, 24vw, 330px);
+  aspect-ratio: 1122 / 1402;
+  margin: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: none;
+}
+.consolidada .testimonial-slot:first-child {
+  aspect-ratio: 1227 / 1282;
+}
+.consolidada .testimonial-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+.consolidada main .price-card .installments {
+  margin: 0;
+  font-family: Manrope, sans-serif;
+  font-size: clamp(54px, 6vw, 78px) !important;
+  line-height: 1 !important;
+  letter-spacing: -.05em !important;
+  color: #392444;
+  font-weight: 800;
+}
+.consolidada main .price-card .installments span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 18px !important;
+  letter-spacing: 0 !important;
+  font-weight: 700;
+  color: var(--accent);
+}
+.consolidada main .price-card .cash-price {
+  margin: 12px 0 18px;
+  color: var(--accent);
+  font-size: 19px !important;
+  font-weight: 700;
+}
+@keyframes testimonial-scroll {
+  to { transform: translateX(calc(-50% - 12px)); }
+}
+@media (max-width: 650px) {
+  .consolidada .benefit-strip > .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 18px 0;
+    max-width: 320px;
+    justify-items: center;
+  }
+  .consolidada .benefit-strip .container > span {
+    width: max-content;
+    min-width: 245px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #d5c6df;
+  }
+  .consolidada .benefit-strip .container > span:last-child {
+    border-bottom: 0;
+  }
+  .consolidada .benefit-strip .icon {
+    width: 32px;
+    height: 32px;
+  }
+  .consolidada .benefit-strip svg {
+    width: 23px;
+    height: 23px;
+  }
+  .consolidada .testimonial-marquee { margin-top: 34px; }
+  .consolidada .testimonial-track {
+    gap: 18px;
+    padding: 6px 18px;
+    animation-duration: 50s;
+  }
+  .consolidada .testimonial-slot { flex-basis: min(78vw, 330px); }
+  .consolidada .price-card {
+    padding: 34px 16px 30px;
+  }
+  .consolidada main .price-card .installments {
+    font-size: clamp(86px, 24vw, 104px) !important;
+    line-height: .92 !important;
+  }
+  .consolidada main .price-card .installments span {
+    margin-bottom: 8px;
+    font-size: 20px !important;
+  }
+  .consolidada main .price-card .cash-price {
+    margin-top: 16px;
+    font-size: 18px !important;
+  }
+  .consolidada .faq,
+  .consolidada .faq > div,
+  .consolidada .faq .reveal,
+  .consolidada .faq details,
+  .consolidada .faq summary,
+  .consolidada .faq p {
+    text-align: left;
+  }
+  .consolidada .faq .eyebrow {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .consolidada .faq .reveal {
+    text-align: center;
+  }
+  .consolidada .faq .reveal h2 {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(38px, 11vw, 44px);
+    line-height: 1.08;
+    text-align: center;
+  }
+  .consolidada .faq summary {
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .consolidada .faq summary span {
+    flex: 0 0 auto;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consolidada .testimonial-marquee { overflow-x: auto; }
+  .consolidada .testimonial-track { animation: none; }
+}
