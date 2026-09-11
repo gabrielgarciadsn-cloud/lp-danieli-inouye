@@ -32,7 +32,7 @@
   max-width: none;
   min-height: 680px;
   padding: 120px 0 65px;
-  background: url('../assets/images/background-home.webp') center center / cover no-repeat;
+  background: url('../assets/images/background-home-desktop.webp') center center / cover no-repeat;
   text-align: left;
 }
 .consolidada .hero-classic .hero-content { max-width: 570px; width: 49%; }
@@ -85,7 +85,7 @@
     min-height: 0;
     padding: 350px 0 55px;
     background-color: #f4eef9;
-    background-image: linear-gradient(to bottom, transparent 260px, #f4eef9 410px), url('../assets/images/background-home.webp');
+    background-image: linear-gradient(to bottom, transparent 260px, #f4eef9 410px), url('../assets/images/background-home-mobile.webp');
     background-position: center top, 88% top;
     background-size: 100% 420px, auto 420px;
     background-repeat: no-repeat;
