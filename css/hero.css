@@ -86,7 +86,7 @@
     padding: 350px 0 55px;
     background-color: #f4eef9;
     background-image: linear-gradient(to bottom, transparent 260px, #f4eef9 410px), url('../assets/images/background-home-mobile.webp');
-    background-position: center top, 88% top;
+    background-position: center top, center top;
     background-size: 100% 420px, auto 420px;
     background-repeat: no-repeat;
     text-align: center;
@@ -274,4 +274,19 @@
 @media (prefers-reduced-motion: reduce) {
   .consolidada .testimonial-marquee { overflow-x: auto; }
   .consolidada .testimonial-track { animation: none; }
+}
+
+.consolidada .mentor-photo {
+  height: auto;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+}
+.consolidada .mentor-photo img,
+.consolidada .image-dani {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+  border-radius: 0;
 }

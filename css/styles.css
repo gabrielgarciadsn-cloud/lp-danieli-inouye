@@ -118,12 +118,9 @@
 .consolidada .course>.section-cta{margin-top:0}
 @media(max-width:650px){.consolidada .section-cta,.consolidada .course>.section-cta{margin-top:32px}.consolidada .section-cta .button{max-width:100%;gap:16px}}
 
-/* Student testimonials — reserved image slots for supplied feedback. */
-.consolidada .testimonials{text-align:center;padding-top:40px;padding-bottom:110px}
+/* Student testimonials — infinite horizontal scroll with supplied screenshots. */
+.consolidada .testimonials{text-align:center;padding-top:40px;padding-bottom:110px;overflow:hidden}
 .consolidada .testimonials .eyebrow{margin-inline:auto}
-.consolidada .testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:48px}
-.consolidada .testimonial-slot{margin:0;overflow:hidden;border:1px solid #d8d2de;border-radius:20px;aspect-ratio:4/5}
-.consolidada .testimonial-slot .photo-placeholder{min-height:0}
-.consolidada .testimonial-slot:nth-child(2).in-view{animation-delay:.1s}
-.consolidada .testimonial-slot:nth-child(3).in-view{animation-delay:.2s}
-@media(max-width:650px){.consolidada .testimonials{padding-top:24px;padding-bottom:80px}.consolidada .testimonial-grid{grid-template-columns:1fr;gap:24px;margin-top:32px}.consolidada .testimonial-slot{width:100%;max-width:380px;margin-inline:auto}.consolidada .testimonial-slot:nth-child(n).in-view{animation-delay:0s}}
+.consolidada .testimonial-slot{border:0!important;background:#fff!important;box-shadow:none!important;max-width:none!important}
+.consolidada .testimonial-slot.in-view{animation:none!important;opacity:1!important;transform:none!important}
+@media(max-width:650px){.consolidada .testimonials{padding-top:24px;padding-bottom:80px}.consolidada .testimonial-marquee{width:100vw;margin-left:50%;transform:translateX(-50%)}.consolidada .testimonial-slot{width:auto!important;margin-inline:0!important}}
