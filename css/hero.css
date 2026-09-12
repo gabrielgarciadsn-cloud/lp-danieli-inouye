@@ -86,7 +86,7 @@
     padding: 350px 0 55px;
     background-color: #f4eef9;
     background-image: linear-gradient(to bottom, transparent 260px, #f4eef9 410px), url('../assets/images/Background-Home.png');
-    background-position: center top, 68% top;
+    background-position: center top, calc(50% - 186px) top;
     background-size: 100% 420px, auto 420px;
     background-repeat: no-repeat;
     text-align: center;
@@ -132,7 +132,7 @@
   display: flex;
   width: max-content;
   gap: 24px;
-  padding: 8px 24px;
+  padding: 8px 0;
   animation: testimonial-scroll 42s linear infinite;
 }
 .consolidada .testimonial-marquee:hover .testimonial-track {
@@ -181,7 +181,7 @@
   font-weight: 700;
 }
 @keyframes testimonial-scroll {
-  to { transform: translateX(calc(-50% - 12px)); }
+  to { transform: translateX(calc(-50% - var(--loop-half-gap, 12px))); }
 }
 @media (max-width: 650px) {
   .consolidada .benefit-strip > .container {
@@ -218,7 +218,7 @@
   .consolidada .testimonial-marquee { margin-top: 34px; }
   .consolidada .testimonial-track {
     gap: 18px;
-    padding: 6px 18px;
+    padding: 6px 0;
     animation-duration: 50s;
   }
   .consolidada .testimonial-slot { flex-basis: min(78vw, 330px); }
@@ -298,5 +298,5 @@
 .consolidada .mentor-photo{height:auto!important;overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
 .consolidada .mentor-photo img,.consolidada .image-dani{width:100%!important;height:auto!important;object-fit:contain!important;border-radius:0!important;background:transparent!important}
 .consolidada .statement-pin{position:-webkit-sticky!important;position:sticky!important;top:0!important}
-@media(max-width:650px){.consolidada .testimonial-marquee{width:100vw!important;margin-left:50%!important;transform:translateX(-50%)!important}.consolidada .testimonial-track{animation-duration:50s!important}.consolidada .testimonial-slot{flex-basis:min(78vw,330px)!important}.consolidada .hero-classic{background-position:center top,68% top!important}.consolidada .statement-pin{position:-webkit-sticky!important;position:sticky!important;top:0!important}}
+@media(max-width:650px){.consolidada .testimonial-marquee{width:100vw!important;margin-left:50%!important;transform:translateX(-50%)!important}.consolidada .testimonial-track{animation-duration:50s!important}.consolidada .testimonial-slot{flex-basis:min(78vw,330px)!important}.consolidada .hero-classic{background-position:center top,calc(50% - 186px) top!important}.consolidada .statement-pin{position:-webkit-sticky!important;position:sticky!important;top:0!important}}
 @media(prefers-reduced-motion:reduce){.consolidada .testimonial-marquee{overflow-x:auto!important}.consolidada .testimonial-track{animation:none!important}}

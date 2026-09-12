@@ -85,6 +85,41 @@ window.addEventListener('scroll', schedule, {passive:true});
 window.addEventListener('resize', schedule, {passive:true});
 configure();
 
+// Prepare every image before the scrolling loop enters the viewport.
+const marquee = document.querySelector('.testimonial-marquee');
+if (marquee) {
+  const track = marquee.querySelector('.testimonial-track');
+  let ready = false;
+  let visible = false;
+  const sync = () => track.style.setProperty('animation-play-state', ready && visible && !mediaQuery.matches ? 'running' : 'paused', 'important');
+  sync();
+  const prepare = async () => {
+    const pictures = [...marquee.querySelectorAll('img')];
+    pictures.forEach(img => { img.loading = 'eager'; });
+    await Promise.allSettled(pictures.map(img => img.decode()));
+    ready = true;
+    sync();
+  };
+  if ('IntersectionObserver' in window) {
+    const preload = new IntersectionObserver(entries => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        prepare();
+        preload.disconnect();
+      }
+    }, { rootMargin: '1800px 0px' });
+    preload.observe(marquee);
+    const visibility = new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      sync();
+    });
+    visibility.observe(marquee);
+  } else {
+    visible = true;
+    prepare();
+  }
+  mediaQuery.addEventListener('change', sync);
+}
+
 const connections = document.querySelector('.audience-list');
 if (connections && 'IntersectionObserver' in window) {
   const connectionObserver = new IntersectionObserver(entries => {
