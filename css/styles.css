@@ -125,14 +125,14 @@
 .consolidada .testimonial-slot.in-view{animation:none!important;opacity:1!important;transform:none!important}
 @media(max-width:650px){.consolidada .testimonials{padding-top:24px;padding-bottom:80px}.consolidada .testimonial-marquee{width:100vw;margin-left:50%;transform:translateX(-50%)}.consolidada .testimonial-slot{width:auto!important;margin-inline:0!important}}
 
-/* Final bugfixes: keep sticky behavior, testimonials visible, and Danieli photo uncropped. */
+/* Final clean overrides: sticky mobile, clean testimonials, and original Danieli photo. */
 .consolidada .scroll-statement{display:block!important;position:relative!important;height:250svh!important;overflow:visible!important;padding:0!important}
-.consolidada .statement-pin{position:sticky!important;top:0!important;min-height:100svh!important}
-.consolidada .testimonial-marquee{display:block!important;overflow:hidden!important;min-height:360px!important}
-.consolidada .testimonial-track{display:flex!important;width:max-content!important;animation:testimonial-scroll 42s linear infinite!important}
-.consolidada .testimonial-slot{display:block!important;flex:0 0 clamp(250px,24vw,330px)!important;opacity:1!important;transform:none!important;visibility:visible!important;border:0!important;background:#fff!important;box-shadow:none!important}
-.consolidada .testimonial-slot img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;background:#fff!important}
+.consolidada .statement-pin{position:-webkit-sticky!important;position:sticky!important;top:0!important;min-height:100svh!important}
+.consolidada .testimonial-marquee{display:block!important;overflow:hidden!important;background:transparent!important}
+.consolidada .testimonial-track{display:flex!important;align-items:flex-start!important;width:max-content!important;animation:testimonial-scroll 42s linear infinite!important}
+.consolidada .testimonial-slot{display:block!important;flex:0 0 clamp(250px,24vw,330px)!important;opacity:1!important;transform:none!important;visibility:visible!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;aspect-ratio:auto!important;max-width:none!important;overflow:visible!important}
+.consolidada .testimonial-slot img{display:block!important;width:100%!important;height:auto!important;object-fit:contain!important;background:transparent!important}
 .consolidada .mentor-photo{height:auto!important;overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
 .consolidada .mentor-photo img,.consolidada .image-dani{width:100%!important;height:auto!important;object-fit:contain!important;border-radius:0!important;background:transparent!important}
-@media(max-width:650px){.consolidada .scroll-statement{height:220svh!important}.consolidada .testimonial-marquee{width:100vw!important;margin-left:50%!important;transform:translateX(-50%)!important}.consolidada .testimonial-track{animation-duration:50s!important}.consolidada .testimonial-slot{flex-basis:min(78vw,330px)!important}.consolidada .mentor-photo{height:auto!important;border-radius:0!important}.consolidada .hero-classic{background-position:center top,68% top!important}}
-@media(prefers-reduced-motion:reduce){.consolidada .scroll-statement{height:220svh!important}.consolidada .statement-pin{position:sticky!important}.consolidada .testimonial-marquee{overflow-x:auto!important}.consolidada .testimonial-track{animation:none!important}}
+@media(max-width:650px){.consolidada .scroll-statement{height:220svh!important}.consolidada .statement-pin{position:-webkit-sticky!important;position:sticky!important;top:0!important}.consolidada .testimonial-marquee{width:100vw!important;margin-left:50%!important;transform:translateX(-50%)!important}.consolidada .testimonial-track{animation-duration:50s!important}.consolidada .testimonial-slot{flex-basis:min(78vw,330px)!important}.consolidada .mentor-photo{height:auto!important;border-radius:0!important}.consolidada .hero-classic{background-position:center top,68% top!important}}
+@media(prefers-reduced-motion:reduce){.consolidada .testimonial-marquee{overflow-x:auto!important}.consolidada .testimonial-track{animation:none!important}}

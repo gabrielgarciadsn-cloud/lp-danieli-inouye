@@ -29,7 +29,7 @@ const pinnedStatement = document.querySelector('.scroll-statement');
 const scrollLines = [...document.querySelectorAll('.scroll-line')];
 function update() {
   frame = 0;
-  if (isPaused()) return;
+  const paused = isPaused();
   if (pinnedStatement) {
     const rect = pinnedStatement.getBoundingClientRect();
     const distance = Math.max(1, rect.height - innerHeight);
@@ -46,6 +46,7 @@ function update() {
     const heroBottom = hero.offsetTop + hero.offsetHeight;
     header.classList.toggle('nav-visible', scrollY > heroBottom - 80);
   }
+  if (paused) return;
   wordBlocks.forEach(block => {
     const box = block.getBoundingClientRect();
     const fraction = Math.max(0, Math.min(1, (innerHeight * .85 - box.top) / (innerHeight * .6)));
@@ -65,7 +66,9 @@ function configure() {
   if (observer) observer.disconnect();
   const paused = isPaused();
   document.body.classList.toggle('paused', paused);
-  if (!paused && 'IntersectionObserver' in window) {
+  if (paused) {
+    document.querySelectorAll('.reveal:not(.in-view)').forEach(el => el.classList.add('in-view'));
+  } else if ('IntersectionObserver' in window) {
     observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
