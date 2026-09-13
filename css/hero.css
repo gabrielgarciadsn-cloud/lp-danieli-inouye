@@ -30,7 +30,7 @@
   align-items: center;
   width: 100%;
   max-width: none;
-  min-height: 680px;
+  min-height: clamp(760px, 86svh, 940px);
   padding: 120px 0 65px;
   background: url('../assets/images/background-home-desktop.webp') center top / cover no-repeat;
   text-align: left;
