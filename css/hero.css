@@ -219,7 +219,7 @@
   .consolidada .testimonial-track {
     gap: 18px;
     padding: 6px 0;
-    animation-duration: 50s;
+    animation-duration: 180s;
   }
   .consolidada .testimonial-slot { flex-basis: min(78vw, 330px); }
   .consolidada .price-card {
@@ -298,5 +298,5 @@
 .consolidada .mentor-photo{height:auto!important;overflow:visible!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
 .consolidada .mentor-photo img,.consolidada .image-dani{width:100%!important;height:auto!important;object-fit:contain!important;border-radius:0!important;background:transparent!important}
 .consolidada .statement-pin{position:-webkit-sticky!important;position:sticky!important;top:0!important}
-@media(max-width:650px){.consolidada .testimonial-marquee{width:100vw!important;margin-left:50%!important;transform:translateX(-50%)!important}.consolidada .testimonial-track{animation-duration:50s!important}.consolidada .testimonial-slot{flex-basis:min(78vw,330px)!important}.consolidada .hero-classic{background-position:center top,calc(50% - 186px) top!important}.consolidada .statement-pin{position:-webkit-sticky!important;position:sticky!important;top:0!important}}
+@media(max-width:650px){.consolidada .testimonial-marquee{width:100vw!important;margin-left:50%!important;transform:translateX(-50%)!important}.consolidada .testimonial-track{animation-duration:180s!important}.consolidada .testimonial-slot{flex-basis:min(78vw,330px)!important}.consolidada .hero-classic{background-position:center top,calc(50% - 186px) top!important}.consolidada .statement-pin{position:-webkit-sticky!important;position:sticky!important;top:0!important}}
 @media(prefers-reduced-motion:reduce){.consolidada .testimonial-marquee{overflow-x:auto!important}.consolidada .testimonial-track{animation:none!important}}
